@@ -1,0 +1,22 @@
+Before you can use ODK 2, you need to install its tools on an android device. If you just want to view data, you'll need to install ODK Services and ODK Tables, but to fill out forms you'll also need ODK Survey. The installation packages aren't available on the Google Play Store yet, so download them from the Download tab above or click <a href="http://opendatakit-dev.cs.washington.edu/2_0_tools/download_version">here</a><br /><br />
+
+Once you have the tools installed, you'll need to set up a sync endpoint. If you already have a sync endpoint, you can skip to <a href="#change_server">Configuring the sync endpoint</a>.<br /><br />
+
+The sync endpoint is a docker container that needs to be configured with a database and a security backend (only LDAP is supported right now). The docker container is configured to take settings via environment variables and so you do not need to build a new container just to set the database and security settings. However, we don't currently distribute a fully built container, so you will have to perform at least one initial build. Log in to the server you want to run the sync endpoint on and clone into <a href="https://github.com/jbeorse/sync-endpoint-containers">sync-endpoint-containers</a>. Inside there are two folders, one for microsoft sql server and the other for postgres (currently not working). Mysql support is planned. Enter the directory for your preferred backend and run <pre>docker build -t odk/sync_endpoint .</pre> (note the trailing dot). Once it's built, make a new database and user in your database program, edit your configuration into this command and run it<br /><br />
+
+<pre>
+docker run -d -p 80:80 -p 443:443 -e SERVER_URL="CHANGE_THIS" -e SERVER_PORT="80" -e SERVER_SECURE_PORT="443" -e DB_URL="odkdemo.change.this.net:1433" -e DB_NAME='odkdemo' -e DB_USERNAME="XXXXX" -e DB_PASSWORD="XXXXX" -e DB_SCHEMA="XXXXX" -e LDAP_DOMAIN_L1="com" -e LDAP_DOMAIN_L2="changethis" -e LDAP_USERNAME="XXXXX" -e LDAP_PASSWORD="XXXXX" -e REALM_STRING="testingorg ODK Aggregate" -e GROUP_PREFIX="odkdemo" -e CHANNEL_TYPE="REQUIRES_SECURE_CHANNEL" -e SECURE_CHANNEL_TYPE="REQUIRES_SECURE_CHANNEL" odk/sync_endpoint
+</pre><br /><br />
+
+To have it automatically start on boot and restart on failure, change <pre>run -d</pre> to <pre>service create</pre><br /><br />
+
+Now create an LDAP user and give it a group starting with the GROUP_PREFIX you set earlier followed by a space then <pre>ROLE_SYNCHRONIZE_TABLES</pre>, or <pre>ROLE_SUPER_USER_TABLES</pre> to make an admin.<br /><br />
+
+<a name="change_server" id="change_server"><!-- anchor --></a>
+Now open ODK Services on your android device, tap the three dots in the top right and click preferences, then server settings. <!-- TODO images --> Insert the url of the server you just configured and set your username and password, then press the back button and click "Authenticate new user" on the dialog that appears. It will contact the server and attempt to authenticate. If it succeeds, you're ready to install app designer and create your first form<br /><br />
+
+<!-- TODO app designer -->
+
+<!-- TODO grunt adbpush and reset app server -->
+
+<!-- TODO creating the tables widget -->
