@@ -1,57 +1,57 @@
-<span style="width: 50%; margin-left: 25%;">
-	<h2 id="gs_fod">Getting started - Filling out data</h2>
-	OpenDataKit allows you to create surveys, easily deploy those surveys to Android devices where they can be filled out and submitted to a central server where you can aggregate and analyze the responses.<br />
-	In order to fill out surveys using OpenDataKit, you need ODK <a href="https://play.google.com/store/apps/details?id=org.odk.collect.android&hl=en">Collect</a>, an Android app that can be downloaded from the Google Play Store.<br />
-	First, open the google play store on your device and search for ODK Collect.<br />
-	<img style="width: 19%; display: inline-block;" src="images/1.png" />
-	<img style="width: 19%; display: inline-block;" src="images/2.png" />
-	<img style="width: 19%; display: inline-block;" src="images/3.png" />
-	<img style="width: 19%; display: inline-block;" src="images/4.png" />
-	<img style="width: 19%; display: inline-block;" src="images/5.png" /><br />
-	<br />
-	Then, open the Collect app<br />
-	<img style="width: 19%; display: inline-block;" src="images/6.png" /><br />
-	To fill out one of the sample surveys, click Fill Blank Form. You can move between questions by swiping left and right. If you want to exit the form early and save your response for later, press the back button and click Save Changes. To finalize your submission, click Save Form and Exit at the last screen. Note that the submission doesn't get collected until you send it.<br />
-	<img style="width: 19%; display: inline-block;" src="images/7.png" /> <!-- menu -->
-	<img style="width: 19%; display: inline-block;" src="images/8.png" /> <!-- list of forms -->
-	<img style="width: 19%; display: inline-block;" src="images/9.png" /> <!-- filling out questions -->
-	<img style="width: 19%; display: inline-block;" src="images/10.png" /> <!-- save for later -->
-	<img style="width: 19%; display: inline-block;" src="images/11.png" /><br /> <!-- finalize -->
-	None of the sample surveys can be sent (submitted) to the example server.
-	<h2 id="gs_maf">Getting started - Making a survey</h2>
-	There are multiple ways of making a survey, but the easiest is with an ODK tool called Build. You can use Build online by going to <a href="https://build.opendatakit.org/">build.opendatakit.org</a> and creating an account, or by downloading an offline Build application available for Windows and Mac <a href="https://opendatakit.org/downloads/download-category/build/">here</a><br /> <!-- TODO! -->
-	Once you're using Build, the first step is to create a new survey. Click the File button in the top left, then click New Form<br />
-	<img src="images/12.png" /><br /> <!-- File -->
-	<img src="images/13.png" /><br /> <!-- New Form -->
-	Next, you need at least one question in a survey. You can add different types of questions using the bar at the bottom. For example, to add a question that asks the user for their name, click on the Text button. Your new question will appear in the center of the screen. Click on your question, and a set of properties will appear on the right. You will see your changes reflected in the block in the center
-	<img src="images/14.png" /><br /> <!-- Bottom bar with data types -->
-	<img src="images/15.png" /><br /> <!-- New question block -->
-	<img src="images/16.png" /> <!-- properties -->
-	<img src="images/17.png" /><br /> <!-- properties - filled out -->
-	<img src="images/18.png" /><br /> <!-- Updated question block -->
-	You can add questions of different types, such as numeric entry, or select one questions like yes/no questions using the bar at the bottom. You can also use more advanced features using the panel on the right, such as only asking a certain question based on the answer to a previous question, making a field required, or providing a default value in case the user doesn't enter anything. <br />
-	<img src="images/19.png" /><br /> <!-- Example survey -->
-	Once you're done with the survey, you need to load it onto a device with Collect. There are two ways to do that. If you have access to the device's SD card, you can download the survey as XML and put the downloaded file into <pre>/odk/forms</pre>.
-	<img src="images/20.png" /><br /> <!-- Menu -->
-	<img src="images/21.png" /><br /> <!-- Download button -->
-	<h2 id="dys">Distributing your survey</h2>
-	However if you want to view peoples responses, or let other people take your survey without having to add it to their device by hand, you'll need a running instance of ODK Aggregate. Instructions on setting up a new instance of Aggregate on the Google Cloud Engine can be found <a href="http://opendatakit-dev.cs.washington.edu/1_0_tools/aggregate">here</a>.<br /> <!-- TODO -->
-	Once you have a running instance of Aggregate, you will need to deploy your survey to it. This can be done from inside Build, simply click File, then Upload Form to Aggregate. Enter the URL of your Aggregate instance and the superuser username and password you configured when setting it up.<br />
-	<img src="images/22.png" /><br /> <!-- menu -->
-	<img src="images/23.png" /><br /> <!-- aggregate deployment panel -->
-	Once your survey is on Aggregate, you will need to configure Collect on your Android devices to use it. Anyone who wants to take your survey will have to configure Collect to use your instance of Aggregate. First, open Collect, then click the three dots in the top right to bring up the menu. Select General Settings, then Server Settings. Change the URL to the address of your Aggregate instance, and you'll be ready to download surveys, fill them out and upload the results back to the Aggregate instance.<br />
-	<img style="width: 19%; display: inline-block;" src="images/24.png" /> <!-- menu -->
-	<img style="width: 19%; display: inline-block;" src="images/25.png" /> <!-- three dots open -->
-	<img style="width: 19%; display: inline-block;" src="images/26.png" /> <!-- menu of menus -->
-	<img style="width: 19%; display: inline-block;" src="images/27.png" /> <!-- aggregate settings -->
-	<img style="width: 19%; display: inline-block;" src="images/28.png" /><br /> <!-- aggregate url setting -->
-	<h2 id="fys">Filling out your survey</h2>
-	You can now download your new survey by going back to the main menu and clicking Get Empty Form. Check the survey you want to download and click Download Selected. Once you have it downloaded, you can fill it out. Once you've filled it out, it will appear under finalized forms, where you can send the filled-out form to the Aggregate instance<br />
-	<img style="width: 24%; display: inline-block;" src="images/29.png" /> <!-- main menu -->
-	<img style="width: 24%; display: inline-block;" src="images/30.png" /> <!-- get empty form -->
-	<img style="width: 24%; display: inline-block;" src="images/31.png" /> <!-- main menu after submission -->
-	<img style="width: 24%; display: inline-block;" src="images/32.png" /><br /> <!-- upload form -->
-	<h2 id="var">Viewing and analyzing results</h2>
-	TODO
-	<!-- TODO viewing results in Aggregate -->
-</span>
+<h2 id="gs_fod">Getting started - Filling out data</h2>
+OpenDataKit allows you to create surveys, easily deploy those surveys to Android devices where they can be filled out and submitted to a central server where you can aggregate and analyze the responses.<br />
+In order to fill out surveys using OpenDataKit, you need ODK <a href="https://play.google.com/store/apps/details?id=org.odk.collect.android&hl=en">Collect</a>, an Android app that can be downloaded from the Google Play Store.<br />
+First, open the google play store on your device and search for ODK Collect.<br />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/1.png" />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/2.png" />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/3.png" />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/4.png" />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/5.png" /><br />
+<br />
+Then, open the Collect app<br />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/6.png" /><br />
+To fill out one of the sample surveys, click Fill Blank Form. You can move between questions by swiping left and right. If you want to exit the form early and save your response for later, press the back button and click Save Changes. To finalize your submission, click Save Form and Exit at the last screen. Note that the submission doesn't get collected until you send it.<br />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/7.png" /> <!-- menu -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/8.png" /> <!-- list of forms -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/9.png" /> <!-- filling out questions -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/10.png" /> <!-- save for later -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/11.png" /><br /> <!-- finalize -->
+None of the sample surveys can be sent (submitted) to the example server.
+<h2 id="gs_maf">Getting started - Making a survey</h2>
+There are multiple ways of making a survey, but the easiest is with an ODK tool called Build. You can use Build online by going to <a href="https://build.opendatakit.org/">build.opendatakit.org</a> and creating an account, or by downloading an offline Build application available for Windows and Mac <a href="https://opendatakit.org/downloads/download-category/build/">here</a><br /> <!-- TODO! -->
+Once you're using Build, the first step is to create a new survey. Click the File button in the top left, then click New Form<br />
+<img src="https://niles.xyz/odk1_setup/images/12.png" /><br /> <!-- File -->
+<img src="https://niles.xyz/odk1_setup/images/13.png" /><br /> <!-- New Form -->
+Next, you need at least one question in a survey. You can add different types of questions using the bar at the bottom. For example, to add a question that asks the user for their name, click on the Text button. Your new question will appear in the center of the screen. Click on your question, and a set of properties will appear on the right. You will see your changes reflected in the block in the center
+<img src="https://niles.xyz/odk1_setup/images/14.png" /><br /> <!-- Bottom bar with data types -->
+<img src="https://niles.xyz/odk1_setup/images/15.png" /><br /> <!-- New question block -->
+<img src="https://niles.xyz/odk1_setup/images/16.png" /> <!-- properties -->
+<img src="https://niles.xyz/odk1_setup/images/17.png" /><br /> <!-- properties - filled out -->
+<img src="https://niles.xyz/odk1_setup/images/18.png" /><br /> <!-- Updated question block -->
+You can add questions of different types, such as numeric entry, or select one questions like yes/no questions using the bar at the bottom. You can also use more advanced features using the panel on the right, such as only asking a certain question based on the answer to a previous question, making a field required, or providing a default value in case the user doesn't enter anything. <br />
+<img src="https://niles.xyz/odk1_setup/images/19.png" /><br /> <!-- Example survey -->
+Once you're done with the survey, you need to load it onto a device with Collect. There are two ways to do that. If you have access to the device's SD card, you can download the survey as XML and put the downloaded file into <pre>/odk/forms</pre>.
+<img src="https://niles.xyz/odk1_setup/images/20.png" /><br /> <!-- Menu -->
+<img src="https://niles.xyz/odk1_setup/images/21.png" /><br /> <!-- Download button -->
+<h2 id="dys">Distributing your survey</h2>
+However if you want to view peoples responses, or let other people take your survey without having to add it to their device by hand, you'll need a running instance of ODK Aggregate. Instructions on setting up a new instance of Aggregate on the Google Cloud Engine can be found <a href="http://opendatakit-dev.cs.washington.edu/1_0_tools/aggregate">here</a>.<br /> <!-- TODO -->
+Once you have a running instance of Aggregate, you will need to deploy your survey to it. This can be done from inside Build, simply click File, then Upload Form to Aggregate. Enter the URL of your Aggregate instance and the superuser username and password you configured when setting it up.<br />
+<img src="https://niles.xyz/odk1_setup/images/22.png" /><br /> <!-- menu -->
+<img src="https://niles.xyz/odk1_setup/images/23.png" /><br /> <!-- aggregate deployment panel -->
+Once your survey is on Aggregate, you will need to configure Collect on your Android devices to use it. Anyone who wants to take your survey will have to configure Collect to use your instance of Aggregate. First, open Collect, then click the three dots in the top right to bring up the menu. Select General Settings, then Server Settings. Change the URL to the address of your Aggregate instance, and you'll be ready to download surveys, fill them out and upload the results back to the Aggregate instance.<br />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/24.png" /> <!-- menu -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/25.png" /> <!-- three dots open -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/26.png" /> <!-- menu of menus -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/27.png" /> <!-- aggregate settings -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/28.png" /><br /> <!-- aggregate url setting -->
+<h2 id="fys">Filling out your survey</h2>
+You can now download your new survey by going back to the main menu and clicking Get Empty Form. Check the survey you want to download and click Download Selected. Once you have it downloaded, you can fill it out. Once you've filled it out, it will appear under finalized forms, where you can send the filled-out form to the Aggregate instance<br />
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/29.png" /> <!-- main menu -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/30.png" /> <!-- get empty form -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/31.png" /> <!-- main menu after submission -->
+<img style="width: 50%; display: inline-block;" src="https://niles.xyz/odk1_setup/images/32.png" /><br /> <!-- upload form -->
+<h2 id="var">Viewing and analyzing results</h2>
+TODO
+<!-- TODO viewing results in Aggregate -->
+<h2 id="xls">Making more complicated surveys</h2>
+The options available in ODK Build are limited, not all functionality is available. This is to make it as simple as possible for new users to start using. However, if you want more functionality, the full range of features can be used by making forms using Microsoft Excel. Instructions on how to do this can be found <a href="https://xlsform.org">here</a>.
